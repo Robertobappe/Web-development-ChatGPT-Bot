@@ -26,7 +26,7 @@ function sendMessage() {
         // sets a fake timeout that showing loading on send button
         setTimeout(() => {
             // send our message as bot(sender : bot)
-            appendMessage('bot', 'This Source Coded By Reza Mehdikhanlou \nYoutube : @AsmrProg');
+            appendMessage('bot', 'This Source Coded By Roberto bs');
             // change button icon to default
             buttonIcon.classList.add('fa-solid', 'fa-paper-plane');
             buttonIcon.classList.remove('fas', 'fa-spinner', 'fa-pulse');
@@ -41,10 +41,10 @@ function sendMessage() {
 
     const options = {
         method: 'POST',
-        headers: {
-            'content-type': 'application/json',
-            'X-RapidAPI-Key': 'Your Key',
-            'X-RapidAPI-Host': 'chatgpt53.p.rapidapi.com'
+	    headers: {
+		    'x-rapidapi-key': '2e6cba8099msha32844dc8b5c9ffp14869cjsnf047b5019e98',
+		    'x-rapidapi-host': 'chat-gpt26.p.rapidapi.com',
+		    'Content-Type': 'application/json'
             // if you want use official api
             /*
             'content-type': 'application/json',
@@ -54,10 +54,10 @@ function sendMessage() {
         },
         body: `{"messages":[{"role":"user","content":"${message}"}]}`
         // if you want use official api you need have this body
-        // `{"model":"gpt-3.5-turbo","messages":[{"role":"user","content":"${message}"}]}`
+            // `{"model":"gpt-3.5-turbo","messages":[{"role":"user","content":"${message}"}]}`
     };
     // official api : 'https://openai80.p.rapidapi.com/chat/completions';
-    fetch('https://chatgpt53.p.rapidapi.com/', options).then((response) => response.json()).then((response) => {
+    fetch('https://chat-gpt26.p.rapidapi.com/', options).then((response) => response.json()).then((response) => {
         appendMessage('bot', response.choices[0].message.content);
 
         buttonIcon.classList.add('fa-solid', 'fa-paper-plane');
